@@ -25,9 +25,12 @@ print(f"A {creature} appears!")
 
 beast1 = input("FIGHT, CHECK THEIR STATS, OR RUN? F/C/S ")
 
+# --- Creature stats ---
+creature_hp = 10
+
 if beast1 == "C":
-    print(f"{creature} HP: 10")
-    print("Damage per hit: 5")
+    print(f"{creature} HP: {creature_hp}")
+    print("Damage per hit: 3–8")
     beast1 = input("Now what? FIGHT OR RUN? F/S ")
 
 if beast1 == "S":
@@ -35,28 +38,36 @@ if beast1 == "S":
     input("Press ENTER to exit")
     exit()
 
+# --- REAL FIGHT LOOP ---
 if beast1 == "F":
-    # --- Player attack ---
-    player_damage = random.randint(8, 20)
-    print(f"You attack the {creature}!")
-    print(f"You deal {player_damage} damage!")
+    print(f"You engage the {creature} in battle!")
 
-    # --- Creature attack ---
-    creature_damage = random.randint(3, 8)
-    player_hp -= creature_damage
+    while player_hp > 0 and creature_hp > 0:
 
-    print(f"The {creature} hits you back for {creature_damage} damage!")
-    print(f"Your HP is now {player_hp}")
+        # Player attack
+        player_damage = random.randint(8, 20)
+        creature_hp -= player_damage
+        print(f"\nYou strike the {creature} for {player_damage} damage!")
 
-    if player_hp <= 0:
-        print("You died in the dungeon...")
-    else:
-        print("You survived the encounter!")
+        if creature_hp <= 0:
+            print(f"The {creature} collapses! You win!")
+            break
+
+        # Creature attack
+        creature_damage = random.randint(3, 8)
+        player_hp -= creature_damage
+        print(f"The {creature} hits you for {creature_damage} damage!")
+        print(f"Your HP: {player_hp} | {creature} HP: {creature_hp}")
+
+        if player_hp <= 0:
+            print("You fall to the dungeon floor... You died.")
+            break
 
 print("you find writings on the wall")
 print("it appears to be in some sort of language...")
 input("all you could make out was the developer's name... '✈︎🕈︎☜︎☼︎❄︎☪︎ 💧︎❄︎🕆︎👎︎✋︎⚐︎ ☝︎✌︎💣︎☜︎💧︎' it appears to be in a language called 'wingdings'")
 input("\nPress ENTER to exit game")
+
 
     
   # ✈︎🕈︎☜︎☼︎❄︎☪︎ 💧︎❄︎🕆︎👎︎✋︎⚐︎ ☝︎✌︎💣︎☜︎💧︎
