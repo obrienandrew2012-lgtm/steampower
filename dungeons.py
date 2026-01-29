@@ -53,6 +53,9 @@ if beast1 == "F":
     else:
         print("You survived the encounter!")
 
+print("you find writings on the wall")
+print("it appears to be in some sort of language...")
+input("all you could make out was the developer's name... '✈︎🕈︎☜︎☼︎❄︎☪︎ 💧︎❄︎🕆︎👎︎✋︎⚐︎ ☝︎✌︎💣︎☜︎💧︎' it appears to be in a language called 'wingdings'")
 input("\nPress ENTER to exit game")
 
     
