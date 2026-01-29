@@ -24,5 +24,19 @@ if beast1 == "F":
     else:
         print("You attack!")
         print("12 DAMAGE")
+        print("Creatures have 8 HP left!")
+        print(beast1)
+elif beast1 == "C":
+    print("Small Creatures: 20 HP, 5 Damage Per Hit 'Simple Enemies'")
+    print(beast1)
+else: print("You Ran! Earned Nothing")
+
+
+
+
+
+
+
+input("press enter to exit dungeon")
     
   # ✈︎🕈︎☜︎☼︎❄︎☪︎ 💧︎❄︎🕆︎👎︎✋︎⚐︎ ☝︎✌︎💣︎☜︎💧︎
