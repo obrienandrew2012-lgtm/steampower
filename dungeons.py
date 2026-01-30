@@ -1,5 +1,5 @@
 import random
-
+gold = 0
 print("HELLO DUNGEON CRAWLER!")
 
 player_hp = 30  # your health
@@ -51,6 +51,7 @@ if beast1 == "F":
 
         if creature_hp <= 0:
             print(f"The {creature} collapses! You win!")
+            print("You got 10 GOLD")
             break
 
         # Creature attack
@@ -62,10 +63,20 @@ if beast1 == "F":
         if player_hp <= 0:
             print("You fall to the dungeon floor... You died.")
             break
-if input("What do you do now? ") == "wall" or "WALL" or "Wall" or "W":
+strongmonster = (Orc, Troll, Rock Monster)
+qwery = input("What to do now? S(hop), W(all), E(xplore)")
+print(qwery)
+if qwery == "wall" or "WALL" or "Wall" or "W":
     print("you find writings on the wall")
     print("it appears to be in some sort of language...")
     input("all you could make out was the developer's name... '✈︎🕈︎☜︎☼︎❄︎☪︎ 💧︎❄︎🕆︎👎︎✋︎⚐︎ ☝︎✌︎💣︎☜︎💧︎' it appears to be in a language called 'wingdings'")
+elif qwery == "E":
+    print("*something's coming...*")
+    print(f"A {strongmonster} Appeared!")
+
+
+
+
 input("\nPress ENTER to exit game")
 
 
