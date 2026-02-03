@@ -105,11 +105,13 @@ elif action == "E":
             exit()
 
 print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
-
-
-
-
-
+elif qwery == "S":
+    print("Welcome to the Shop!")
+    buy1 = input("Would you like to buy a H(ealing Item), or a B(etter Sword?)")
+    if buy1 == "H":
+        gold -= 5
+        print("You bought a Healing Item for 5 GOLD")
+    elif buy1 == 
 input("\nPress ENTER to exit game")
 
 
