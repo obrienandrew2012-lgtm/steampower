@@ -1,5 +1,4 @@
 import random
-
 gold = 0
 player_hp = 30
 
@@ -111,7 +110,11 @@ elif qwery == "S":
     if buy1 == "H":
         gold -= 5
         print("You bought a Healing Item for 5 GOLD")
-    elif buy1 == 
+    elif buy1 == "B":
+        print("You got the Better Sword")
+        print("You can now have a better sword!")
+print(action)
+        
 input("\nPress ENTER to exit game")
 
 
