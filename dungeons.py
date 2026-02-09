@@ -143,4 +143,3 @@ if action == "E" and relic == 1:
             print(f"you died with {player_hp}")
 
 input("\nPress ENTER to exit game")
-
