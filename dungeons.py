@@ -1,4 +1,5 @@
 import random
+import sys
 
 gold = 0
 player_hp = 30
@@ -9,7 +10,7 @@ print("HELLO DUNGEON CRAWLER!")
 answer = input("ARE YOU READY TO GO IN THE DUNGEON??? Y/N ").upper()
 if answer == "N":
     input("ok bye, hit enter to leave")
-    exit()
+    sys.exit()
 
 print("*hear that?*")
 print("*eyes glow in the dark*")
@@ -29,7 +30,7 @@ if choice == "C":
 
 if choice == "R":
     print("You run away safely...")
-    exit()
+    sys.exit()
 
 if choice == "F":
     print(f"\nYou engage the {creature}!")
@@ -52,7 +53,7 @@ if choice == "F":
 
         if player_hp <= 0:
             print("You collapse... GAME OVER")
-            exit()
+            sys.exit()
 
 print("\nYou move deeper into the dungeon...")
 action = input("What to do now? S(hop), W(all), E(xplore): ").upper()
@@ -91,7 +92,7 @@ if action == "E":
 
     if input("FIGHT OR RUN? F/R ").upper() == "R":
         print("You barely escape...")
-        exit()
+        sys.exit()
 
     print(f"You fight the {strong}!")
 
@@ -113,10 +114,11 @@ if action == "E":
 
         if player_hp <= 0:
             print("The dungeon claims another victim...")
-            exit()
+            sys.exit()
 
 print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
 
+# 🐸 KERMIT EVENT
 if action == "E" and relic == 1:
     print("IS THAT KERMIT THE FROG")
     print("*KERMIT THE FROG APPEARS*")
@@ -128,15 +130,17 @@ if action == "E" and relic == 1:
         print("kermit the frog deals 1 damage to you")
         player_hp -= 1
         print(f"you have {player_hp} HP left!")
-    q = input("NOW WHAT? F/C/R ?")
+
     elif qwery == "M":
         print("You begged and pleaded for mercy")
         print('KERMIT THE FROG says "i was sparing you bucko"')
-        print(q)
+
+        q = input("NOW WHAT? F/C/R ? ").upper()
         if q == "F":
             print("you hit kermit for one damage again. HOW?!?!?")
             print("kermit is no longer sparing you")
             player_hp -= 9999999999
             print(f"you died with {player_hp}")
-    
+
 input("\nPress ENTER to exit game")
+
