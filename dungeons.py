@@ -80,8 +80,17 @@ if action == "S":
 
     else:
         print("You leave the shop")
-
-if action == "E":
+print(action)
+if action == "E" and relic == 1:
+    print("The KERMIT RELIC vibrates...")
+    print("something is coming")
+    print("KERMIT THE FROG APPEARS!!!!!!!!!!!")
+    if input(" F/C/M ? FIGHT, CHECK, OR BEG FOR MERCY?") == "F":
+        print("you hit KERMIT for 1 damage")
+        player_hp -= 1
+        print(f"KERMIT hits you for 1 damage, your health is {player_hp}")
+        print("KERMIT says 'i was sparing you bucko' ")
+elif action == "E":
     print("\n*The ground shakes...*")
 
     strong_monsters = ["Orc", "Troll", "Rock Monster", "Giant Spider"]
@@ -118,28 +127,6 @@ if action == "E":
 
 print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
 
-# 🐸 KERMIT EVENT
-if action == "E" and relic == 1:
-    print("IS THAT KERMIT THE FROG")
-    print("*KERMIT THE FROG APPEARS*")
 
-    qwery = input("FIGHT OR BEG FOR MERCY? F/M ").upper()
-
-    if qwery == "F":
-        print("YOU DEAL DAMAGE TO HIM... 1 DAMAGE???")
-        print("kermit the frog deals 1 damage to you")
-        player_hp -= 1
-        print(f"you have {player_hp} HP left!")
-
-    elif qwery == "M":
-        print("You begged and pleaded for mercy")
-        print('KERMIT THE FROG says "i was sparing you bucko"')
-
-        q = input("NOW WHAT? F/C/R ? ").upper()
-        if q == "F":
-            print("you hit kermit for one damage again. HOW?!?!?")
-            print("kermit is no longer sparing you")
-            player_hp -= 9999999999
-            print(f"you died with {player_hp}")
 
 input("\nPress ENTER to exit game")
