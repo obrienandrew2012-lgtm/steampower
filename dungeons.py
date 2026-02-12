@@ -6,8 +6,8 @@ player_hp = 30
 relic = 0
 
 print("HELLO DUNGEON CRAWLER!")
-
 answer = input("ARE YOU READY TO GO IN THE DUNGEON??? Y/N ").upper()
+
 if answer == "N":
     input("ok bye, hit enter to leave")
     sys.exit()
@@ -20,7 +20,6 @@ creature = random.choice(creatures)
 creature_hp = random.randint(8, 15)
 
 print(f"\nA {creature} appears!")
-
 choice = input("FIGHT, CHECK THEIR STATS, OR RUN? F/C/R ").upper()
 
 if choice == "C":
@@ -34,7 +33,6 @@ if choice == "R":
 
 if choice == "F":
     print(f"\nYou engage the {creature}!")
-
     while player_hp > 0 and creature_hp > 0:
         player_damage = random.randint(6, 12)
         creature_hp -= player_damage
@@ -42,6 +40,7 @@ if choice == "F":
 
         if creature_hp <= 0:
             gold += 10
+            relic = 1
             print(f"The {creature} is defeated!")
             print("You gained 10 GOLD")
             break
@@ -57,79 +56,35 @@ if choice == "F":
 
 print("\nYou move deeper into the dungeon...")
 action = input("What to do now? S(hop), W(all), E(xplore): ").upper()
+print(action)
 
-if action == "W":
-    print("You find strange writings on the wall...")
-    input("All you can read is: '✈︎🕈︎☜︎☼︎❄︎☪︎ 💧︎❄︎🕆︎👎︎✋︎⚐︎ ☝︎✌︎💣︎☜︎💧︎'")
-
-if action == "S":
-    print("Welcome to the Shop!")
-    buy1 = input("Buy H(eal), B(etter Sword), or K(ermit Relic)? ").upper()
-
-    if buy1 == "H" and gold >= 5:
-        gold -= 5
-        player_hp += 5
-        print("You healed 5 HP")
-        print(action)
-
-    elif buy1 == "B":
-        print("You got the Better Sword (it looks cool)")
-        print(action)
-
-    elif buy1 == "K":
-        print("you got the KERMIT RELIC")
-        relic = 1
-        print(action)
-
-    else:
-        print("You leave the shop")
-        print(action)
 if action == "E" and relic == 1:
-    print("The KERMIT RELIC vibrates...")
-    print("something is coming")
-    print("KERMIT THE FROG APPEARS!!!!!!!!!!!")
-    if input(" F/C/M ? FIGHT, CHECK, OR BEG FOR MERCY?") == "F":
-        print("you hit KERMIT for 1 damage")
-        player_hp -= 1
-        print(f"KERMIT hits you for 1 damage, your health is {player_hp}")
-        print("KERMIT says 'i was sparing you bucko' ")
-elif action == "E":
-    print("\n*The ground shakes...*")
+    print("\nKermit appears...")
+    kermit_hp = 9000000000000000000
+    first_hit = True
 
-    strong_monsters = ["Orc", "Troll", "Rock Monster", "Giant Spider"]
-    strong = random.choice(strong_monsters)
-    strong_hp = random.randint(20, 35)
+    while player_hp > 0 and kermit_hp > 0:
+        kermit_hp -= 1
+        print("You hit Kermit for 1 damage!")
+        print(f"Kermit HP: {kermit_hp}")
 
-    print(f"A {strong} appears!")
-
-    if input("FIGHT OR RUN? F/R ").upper() == "R":
-        print("You barely escape...")
-        sys.exit()
-
-    print(f"You fight the {strong}!")
-
-    while player_hp > 0 and strong_hp > 0:
-        player_damage = random.randint(8, 15)
-        strong_hp -= player_damage
-        print(f"You strike the {strong} for {player_damage} damage!")
-
-        if strong_hp <= 0:
-            gold += 25
-            print(f"You defeated the {strong}!")
-            print("You gained 25 GOLD")
+        if kermit_hp <= 0:
+            print("Kermit has been defeated!")
             break
 
-        strong_damage = random.randint(6, 12)
-        player_hp -= strong_damage
-        print(f"The {strong} smashes you for {strong_damage} damage!")
-        print(f"Your HP: {player_hp}")
+        if first_hit:
+            player_hp -= 1
+            print("Kermit spares you... He hits you for 1 damage.")
+            print(f"Your HP: {player_hp}")
+            first_hit = False
+        else:
+            player_hp -= 9000000000000000000000000000
+            print("Kermit unleashes true power...")
+            print("He hits you for 9 octillion damage!")
+            print(f"Your HP: {player_hp}")
 
         if player_hp <= 0:
-            print("The dungeon claims another victim...")
+            print("You have been obliterated... GAME OVER")
             sys.exit()
 
 print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
-
-
-
-input("\nPress ENTER to exit game")
