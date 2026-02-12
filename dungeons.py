@@ -61,8 +61,10 @@ action = input("What to do now? S(hop), W(all), E(xplore): ").upper()
 
 if action == "S":
     buy1 = input(
-        "Welcome to the shop! Buy (H)ealing Item (10 HP, 5 GOLD), "
-        "(B)etter Sword (10 GOLD), or (K)ermit relic (FREE): "
+        "Welcome to the shop! Would you like to buy the "
+        "(H)ealing Item? (restores 10 HP, 5 GOLD), "
+        "the (B)etter Sword (does nothing, 10 GOLD) or "
+        "the (K)ermit relic (ITS FREE I DONT WANT IT) "
     ).upper()
 
     if buy1 == "H":
@@ -71,14 +73,14 @@ if action == "S":
         print(f"Your HP is now {player_hp}")
 
     elif buy1 == "B":
-        gold -= 10
         print("You've pretty much wasted 10 GOLD")
+        gold -= 10
 
     elif buy1 == "K":
         relic += 1
-        print("You obtained the KERMIT RELIC")
+        print(f"You now have {gold} GOLD, the KERMIT RELIC was free")
 
-    print(f"You now have {gold} GOLD")
+    print(action)  # i fixed a problem :D
 
 if action == "E" and relic >= 1:
     print("\nKermit appears...")
