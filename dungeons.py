@@ -70,17 +70,20 @@ if action == "S":
         gold -= 5
         player_hp += 5
         print("You healed 5 HP")
+        print(action)
 
     elif buy1 == "B":
         print("You got the Better Sword (it looks cool)")
+        print(action)
 
     elif buy1 == "K":
         print("you got the KERMIT RELIC")
         relic = 1
+        print(action)
 
     else:
         print("You leave the shop")
-print(action)
+        print(action)
 if action == "E" and relic == 1:
     print("The KERMIT RELIC vibrates...")
     print("something is coming")
