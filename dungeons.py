@@ -79,7 +79,7 @@ if action == "S":
     elif buy1 == "K":
         relic += 1
         print(f"You now have {gold} GOLD, the KERMIT RELIC was free")
-
+action = input("What now? E/S/W
     print(action)  # i fixed a problem :D
 
 if action == "E" and relic >= 1:
