@@ -151,3 +151,5 @@ else:
     print("Invalid choice.")
 
 print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
+print("PRESS ENTER TO EXIT BETA GAME")
+input(" ")
