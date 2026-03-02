@@ -8,7 +8,7 @@ relic = 0
 print("HELLO DUNGEON CRAWLER!")
 answer = input("ARE YOU READY TO GO IN THE DUNGEON??? Y/N ").upper()
 
-if answer == "N":
+if answer != "Y":
     input("ok bye, hit enter to leave")
     sys.exit()
 
@@ -42,7 +42,6 @@ if choice == "F":
 
         if creature_hp <= 0:
             gold += 10
-            relic = 1
             print(f"The {creature} is defeated!")
             print("You gained 10 GOLD")
             break
@@ -56,36 +55,63 @@ if choice == "F":
             print("You collapse... GAME OVER")
             sys.exit()
 
+else:
+    print("Invalid choice. The creature disappears.")
+    sys.exit()
+
+# --- Dungeon Continues ---
+
 print("\nYou move deeper into the dungeon...")
 action = input("What to do now? S(hop), W(all), E(xplore): ").upper()
 
 if action == "S":
     buy1 = input(
-        "Welcome to the shop! Would you like to buy the "
-        "(H)ealing Item? (restores 10 HP, 5 GOLD), "
-        "the (B)etter Sword (does nothing, 10 GOLD) or "
-        "the (K)ermit relic (ITS FREE I DONT WANT IT) "
+        "\nWelcome to the shop!\n"
+        "(H)ealing Item (restores 10 HP, 5 GOLD)\n"
+        "(B)etter Sword (does nothing, 10 GOLD)\n"
+        "(K)ermit relic (ITS FREE I DONT WANT IT)\n"
+        "Choose: "
     ).upper()
 
     if buy1 == "H":
-        player_hp += 10
-        gold -= 5
-        print(f"Your HP is now {player_hp}")
+        if gold >= 5:
+            player_hp += 10
+            gold -= 5
+            print(f"Your HP is now {player_hp}")
+            print(f"Gold remaining: {gold}")
+        else:
+            print("Not enough gold!")
 
     elif buy1 == "B":
-        print("You've pretty much wasted 10 GOLD")
-        gold -= 10
+        if gold >= 10:
+            gold -= 10
+            print("You've pretty much wasted 10 GOLD")
+            print(f"Gold remaining: {gold}")
+        else:
+            print("Not enough gold!")
 
     elif buy1 == "K":
-        relic += 1
-        print(f"You now have {gold} GOLD, the KERMIT RELIC was free")
+        relic = 1
+        print("You obtained the KERMIT RELIC...")
+    else:
+        print("Invalid shop choice.")
 
-action = input("What now? E/S/W ").upper()
-print(action)
+elif action == "W":
+    print("You wait... nothing happens.")
 
-if action == "E" and relic >= 1:
+elif action == "E":
+    print("You explore...")
+
+else:
+    print("Invalid choice.")
+
+# --- Second Action ---
+
+action = input("\nWhat now? E/S/W ").upper()
+
+if action == "E" and relic == 1:
     print("\nKermit appears...")
-    kermit_hp = 9000000000000000000000000
+    kermit_hp = 999999999
     first_hit = True
 
     while player_hp > 0 and kermit_hp > 0:
@@ -111,5 +137,17 @@ if action == "E" and relic >= 1:
         if player_hp <= 0:
             print("You have been obliterated... GAME OVER")
             sys.exit()
+
+elif action == "E":
+    print("You explore but nothing special happens.")
+
+elif action == "S":
+    print("The shop is closed.")
+
+elif action == "W":
+    print("You wait... ominously.")
+
+else:
+    print("Invalid choice.")
 
 print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
