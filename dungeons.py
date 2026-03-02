@@ -79,12 +79,13 @@ if action == "S":
     elif buy1 == "K":
         relic += 1
         print(f"You now have {gold} GOLD, the KERMIT RELIC was free")
-action = input("What now? E/S/W
-    print(action)  # i fixed a problem :D
+
+action = input("What now? E/S/W ").upper()
+print(action)
 
 if action == "E" and relic >= 1:
     print("\nKermit appears...")
-    kermit_hp = 9000000000000000000000000  #there is no winning here dawg
+    kermit_hp = 9000000000000000000000000
     first_hit = True
 
     while player_hp > 0 and kermit_hp > 0:
