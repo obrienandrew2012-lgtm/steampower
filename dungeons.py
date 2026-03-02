@@ -55,7 +55,7 @@ if choice == "F":
             print("You collapse... GAME OVER")
             sys.exit()
 
-else:
+elif choice not in ["F", "C", "R"]:
     print("Invalid choice. The creature disappears.")
     sys.exit()
 
@@ -97,4 +97,58 @@ if action == "S":
     else:
         print("Invalid shop choice.")
 
-elif action == "
+elif action == "W":
+    print("You wait... nothing happens.")
+
+elif action == "E":
+    print("You explore...")
+
+else:
+    print("Invalid choice.")
+
+# --- Second Action ---
+
+action = input("\nWhat now? E/S/W ").upper()
+
+if action == "E" and relic == 1:
+    print("\nKermit appears...")
+    kermit_hp = 999999999
+    first_hit = True
+
+    while player_hp > 0 and kermit_hp > 0:
+        kermit_hp -= 1
+        print("You hit Kermit for 1 damage!")
+        print(f"Kermit HP: {kermit_hp}")
+
+        if kermit_hp <= 0:
+            print("Kermit has been defeated!")
+            break
+
+        if first_hit:
+            player_hp -= 1
+            print("Kermit spares you... He hits you for 1 damage.")
+            first_hit = False
+        else:
+            player_hp -= 9999
+            print("Kermit unleashes true power...")
+            print("He hits you for massive damage!")
+
+        print(f"Your HP: {player_hp}")
+
+        if player_hp <= 0:
+            print("You have been obliterated... GAME OVER")
+            sys.exit()
+
+elif action == "E":
+    print("You explore but nothing special happens.")
+
+elif action == "S":
+    print("The shop is closed.")
+
+elif action == "W":
+    print("You wait... ominously.")
+
+else:
+    print("Invalid choice.")
+
+print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
