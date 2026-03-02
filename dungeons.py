@@ -137,6 +137,7 @@ if action == "E" and relic == 1:
 
         if player_hp <= 0:
             print("You have been obliterated... GAME OVER")
+            input("")
             sys.exit()
 
 elif action == "E":
@@ -152,3 +153,4 @@ else:
     print("Invalid choice.")
 
 print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
+input("")
