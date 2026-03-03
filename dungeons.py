@@ -1,5 +1,4 @@
 import random
-import sys
 
 gold = 0
 player_hp = 30
