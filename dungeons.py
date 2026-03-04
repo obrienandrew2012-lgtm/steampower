@@ -97,6 +97,17 @@ else:
 
         elif action == "E":
             print("You explore...")
+            random.randint(1, 3)
+            if random.randint(1, 3) == 1:
+                print("A BIG SLIME APPEARS!")
+                print("WHAT DO YOU DO? F/R/D")
+                g = input("")
+                if g == "F":
+                    print("THE ENEMY IS HIT FOR 3 HP!")
+                    print("ENEMY HP IS NOW 5")
+                    print("THE BIG SLIME HITS YOU FOR 12 HP")
+                    player_hp -= 12
+                    print(f"YOUR HP IS NOW {player_hp}")
 
         else:
             print("Invalid choice.")
