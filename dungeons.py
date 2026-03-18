@@ -1,5 +1,6 @@
 import random
 import time
+
 rocke = 50
 gold = 0
 player_hp = 30
@@ -98,28 +99,34 @@ else:
             time.sleep(3)
             print("GAAH? A CREATURE APPEARED!")
             print("A Rock Elemental appears! C(???????)")
-                  if input("") == "C":
-                        print("You... tried to use CHARISMA")
-                        print("FAILED MISERABLY!!!!!!")
-                        print("F, R ")
-                            if input("") == "F":
-                                print("YOU FOUGHT THE ROCK ELEMENTAL! HIT IT FOR 12 DAMAGE!!!!")
-                                rocke -= 12
-                            elif input("") == "R":
-                                print("YOU RAN AWAY, GOT NOTHING")
-                                print("THE ROCK ELEMENTAL DOESNT LIKE YOU")
+
+            choice2 = input("").upper()
+
+            if choice2 == "C":
+                print("You... tried to use CHARISMA")
+                print("FAILED MISERABLY!!!!!!")
+
+                choice3 = input("F, R ").upper()
+
+                if choice3 == "F":
+                    print("YOU FOUGHT THE ROCK ELEMENTAL! HIT IT FOR 12 DAMAGE!!!!")
+                    rocke -= 12
+                elif choice3 == "R":
+                    print("YOU RAN AWAY, GOT NOTHING")
+                    print("THE ROCK ELEMENTAL DOESNT LIKE YOU")
+
             print("THE ROCK ELEMENTAL HITS YOU FOR 5 DAMAGE!")
             player_hp -= 5
             print(f"YOUR HEALTH IS NOW {player_hp}")
-            
 
         elif action == "E":
             print("You explore...")
-            random.randint(1, 3)
+
             if random.randint(1, 3) == 1:
                 print("A BIG SLIME APPEARS!")
                 print("WHAT DO YOU DO? F/R/D")
-                g = input("")
+                g = input("").upper()
+
                 if g == "F":
                     print("THE ENEMY IS HIT FOR 3 HP!")
                     print("ENEMY HP IS NOW 5")
