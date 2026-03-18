@@ -98,7 +98,7 @@ else:
             time.sleep(3)
             print("GAAH? A CREATURE APPEARED!")
             print("A Rock Elemental appears! C(???????)")
-                  if input("") == C:
+                  if input("") == "C":
                         print("You... tried to use CHARISMA")
                         print("FAILED MISERABLY!!!!!!")
                         print("F, R ")
