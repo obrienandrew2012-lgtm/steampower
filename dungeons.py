@@ -96,7 +96,7 @@ else:
         elif action == "W":
             print("You wait... nothing happens.")
             time.sleep(3)
-            print("GAAH? A CREATURE APPEARED!)
+            print("GAAH? A CREATURE APPEARED!")
             print("A Rock Elemental appears! C(???????)")
                   if input("") == C:
                         print("You... tried to use CHARISMA")
