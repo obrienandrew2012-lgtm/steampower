@@ -1,5 +1,6 @@
 import random
-
+import time
+rocke = 50
 gold = 0
 player_hp = 30
 relic = 0
@@ -57,7 +58,7 @@ else:
     # --- Dungeon Continues ---
     if player_hp > 0:
         print("\nYou move deeper into the dungeon...")
-        action = input("What to do now? S(hop), W(all), E(xplore): ").upper()
+        action = input("What to do now? S(hop), W(ait), E(xplore): ").upper()
 
         if action == "S":
             buy1 = input(
@@ -94,6 +95,23 @@ else:
 
         elif action == "W":
             print("You wait... nothing happens.")
+            time.sleep(3)
+            print("GAAH? A CREATURE APPEARED!)
+            print("A Rock Elemental appears! C(???????)")
+                  if input("") == C:
+                        print("You... tried to use CHARISMA")
+                        print("FAILED MISERABLY!!!!!!")
+                        print("F, R ")
+                            if input("") == "F":
+                                print("YOU FOUGHT THE ROCK ELEMENTAL! HIT IT FOR 12 DAMAGE!!!!")
+                                rocke -= 12
+                            elif input("") == "R":
+                                print("YOU RAN AWAY, GOT NOTHING")
+                                print("THE ROCK ELEMENTAL DOESNT LIKE YOU")
+            print("THE ROCK ELEMENTAL HITS YOU FOR 5 DAMAGE!")
+            player_hp -= 5
+            print(f"YOUR HEALTH IS NOW {player_hp}")
+            
 
         elif action == "E":
             print("You explore...")
