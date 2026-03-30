@@ -170,16 +170,17 @@ else:
                     break
 
         elif action == "E":
-            print("You explore but nothing special happens.")
+            print("you explore but nothing really happens")
 
         elif action == "S":
             print("The shop is closed.")
 
         elif action == "W":
-            print("You wait... ominously.")
+            print("You wait... the creature doesnt come back for obvious reasons.")
 
         else:
             print("Invalid choice.")
+    print("YOU MADE IT TO THE ICE CAVE ZONE THING")
 
     print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
     input("")
