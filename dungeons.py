@@ -8,76 +8,80 @@ relic = 0
 
 print("HELLO DUNGEON CRAWLER!")
 answer = input("ARE YOU READY TO GO IN THE DUNGEON??? Y/N ").upper()
+if answer = "QSG22":
+    print("ADMIN CONTROLS ACTIVATED")
+    player_hp += 9999
+    gold += 9999
+    print(answer)
+    elif answer == "N":
+        input("ok bye, hit enter to leave")
+    elif answer == "Y":
+        print("*hear that?*")
+        print("*eyes glow in the dark*")
 
-if answer != "Y":
-    input("ok bye, hit enter to leave")
-else:
-    print("*hear that?*")
-    print("*eyes glow in the dark*")
+        creatures = ["Goblin", "Slime", "Skeleton", "Bat", "Tiny Demon"]
+        creature = random.choice(creatures)
+        creature_hp = random.randint(8, 15)
 
-    creatures = ["Goblin", "Slime", "Skeleton", "Bat", "Tiny Demon"]
-    creature = random.choice(creatures)
-    creature_hp = random.randint(8, 15)
+        print(f"\nA {creature} appears!")
 
-    print(f"\nA {creature} appears!")
+        choice = input("FIGHT, CHECK THEIR STATS, OR RUN? F/C/R ").upper()
 
-    choice = input("FIGHT, CHECK THEIR STATS, OR RUN? F/C/R ").upper()
+        if choice == "C":
+            print(f"{creature} HP: {creature_hp}")
+            print("Damage per hit: 3–8")
+            choice = input("Now what? FIGHT OR RUN? F/R ").upper()
 
-    if choice == "C":
-        print(f"{creature} HP: {creature_hp}")
-        print("Damage per hit: 3–8")
-        choice = input("Now what? FIGHT OR RUN? F/R ").upper()
+        if choice == "R":
+            print("You run away safely...")
+        elif choice == "F":
+            print(f"\nYou engage the {creature}!")
 
-    if choice == "R":
-        print("You run away safely...")
-    elif choice == "F":
-        print(f"\nYou engage the {creature}!")
+            while player_hp > 0 and creature_hp > 0:
+                player_damage = random.randint(6, 12)
+                creature_hp -= player_damage
+                print(f"You hit the {creature} for {player_damage} damage!")
 
-        while player_hp > 0 and creature_hp > 0:
-            player_damage = random.randint(6, 12)
-            creature_hp -= player_damage
-            print(f"You hit the {creature} for {player_damage} damage!")
+                if creature_hp <= 0:
+                    gold += 10
+                    print(f"The {creature} is defeated!")
+                    print("You gained 10 GOLD")
+                    break
 
-            if creature_hp <= 0:
-                gold += 10
-                print(f"The {creature} is defeated!")
-                print("You gained 10 GOLD")
-                break
+                creature_damage = random.randint(3, 8)
+                player_hp -= creature_damage
+                print(f"The {creature} hits you for {creature_damage} damage!")
+                print(f"Your HP: {player_hp}")
 
-            creature_damage = random.randint(3, 8)
-            player_hp -= creature_damage
-            print(f"The {creature} hits you for {creature_damage} damage!")
-            print(f"Your HP: {player_hp}")
+                if player_hp <= 0:
+                    print("You collapse... GAME OVER")
+                    break
 
-            if player_hp <= 0:
-                print("You collapse... GAME OVER")
-                break
-
-    elif choice not in ["F", "C", "R"]:
-        print("Invalid choice. The creature disappears.")
+        elif choice not in ["F", "C", "R"]:
+            print("Invalid choice. The creature disappears.")
 
     # --- Dungeon Continues ---
-    if player_hp > 0:
-        print("\nYou move deeper into the dungeon...")
-        action = input("What to do now? S(hop), W(ait), E(xplore): ").upper()
+        if player_hp > 0:
+            print("\nYou move deeper into the dungeon...")
+            action = input("What to do now? S(hop), W(ait), E(xplore): ").upper()
 
-        if action == "S":
-            buy1 = input(
-                "\nWelcome to the shop!\n"
-                "(H)ealing Item (restores 10 HP, 5 GOLD)\n"
-                "(B)etter Sword (does nothing, 10 GOLD)\n"
-                "(K)ermit relic (ITS FREE I DONT WANT IT)\n"
-                "Choose: "
-            ).upper()
+            if action == "S":
+                buy1 = input(
+                    "\nWelcome to the shop!\n"
+                    "(H)ealing Item (restores 10 HP, 5 GOLD)\n"
+                    "(B)etter Sword (does nothing, 10 GOLD)\n"
+                    "(K)ermit relic (ITS FREE I DONT WANT IT)\n"
+                    "Choose: "
+                     ).upper()
 
-            if buy1 == "H":
-                if gold >= 5:
-                    player_hp += 10
-                    gold -= 5
-                    print(f"Your HP is now {player_hp}")
-                    print(f"Gold remaining: {gold}")
+                if buy1 == "H":
+                    if gold >= 5:
+                        player_hp += 10
+                        gold -= 5
+                        print(f"Your HP is now {player_hp}")
+                        print(f"Gold remaining: {gold}")
                 else:
-                    print("Not enough gold!")
+                      print("Not enough gold!")
 
             elif buy1 == "B":
                 if gold >= 10:
