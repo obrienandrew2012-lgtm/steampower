@@ -10,8 +10,7 @@ print("You are now an explorer/knight")
 print("You've heard rumors about this DUNGEON...")
 print("You've heard about a great reward...")
 print("It's now or never...")
-answer = input("Are you ready  to go into the dungeon??/n"
-                "Y/N ").upper()
+answer = input("Are you ready  to go into the dungeon?? Y/N ").upper()
 
 if answer == "QSG22":
     print("ADMIN CONTROLS ACTIVATED")
