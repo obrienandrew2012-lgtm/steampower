@@ -6,8 +6,12 @@ gold = 0
 player_hp = 30
 relic = 0
 
-print("HELLO DUNGEON CRAWLER!")
-answer = input("ARE YOU READY TO GO IN THE DUNGEON??? Y/N ").upper()
+print("You are now an explorer/knight")
+print("You've heard rumors about this DUNGEON...")
+print("You've heard about a great reward...")
+print("It's now or never...")
+answer = input("Are you ready  to go into the dungeon??/n"
+                "Y/N ").upper()
 
 if answer == "QSG22":
     print("ADMIN CONTROLS ACTIVATED")
