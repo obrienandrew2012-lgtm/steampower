@@ -1,6 +1,6 @@
 import random
 import time
-
+import sys
 rocke = 50
 gold = 0
 player_hp = 30
@@ -20,6 +20,7 @@ if answer == "QSG22":
 
 elif answer == "N":
     input("ok bye, hit enter to leave")
+    sys.exit()
 
 elif answer == "Y":
     print("*hear that?*")
