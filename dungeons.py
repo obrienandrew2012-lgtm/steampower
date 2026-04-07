@@ -192,5 +192,19 @@ elif answer == "Y":
             print("Invalid choice.")
 
 print("YOU MADE IT TO THE ICE CAVE ZONE THING")
+print("A creature appears!")
+if input("F/R/T") == "F":
+    print("You hit the SNOWDOG for 6 health")
+    creature_hp -= 6
+    print(creature_hp)
+    print("THE SNOWDOG HITS YOU FOR 9 HEALTH")
+    player_hp -= 9
+    print("YOU HIT THE SNOWDOG FOR 5 HEALTH")
+    creature_hp -= 9
+    print("the SNOWDOG quit fighting for some reason")
+    break
+elif input("F/R/T") == "T":
+    print("you showed the SNOWDOG the TORCH")
+    print("well its gone now")
 print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
 input("")
