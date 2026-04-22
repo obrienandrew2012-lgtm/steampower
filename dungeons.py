@@ -5,7 +5,7 @@ rocke = 50
 gold = 0
 player_hp = 30
 relic = 0
-
+rockhatesyou = False
 print("You are now an explorer/knight")
 print("You've heard rumors about this DUNGEON...")
 print("You've heard about a great reward...")
@@ -129,6 +129,8 @@ elif answer == "Y":
             print("THE ROCK ELEMENTAL HITS YOU FOR 5 DAMAGE!")
             player_hp -= 5
             print(f"YOUR HEALTH IS NOW {player_hp}")
+            print("THE ROCK ELEMENTAL HATES YOU BY THE WAY")
+            rockhatesyou = True
 
         elif action == "E":
             print("You explore...")
@@ -206,5 +208,23 @@ if input("F/R/T") == "F":
 elif input("F/R/T") == "T":
     print("you showed the SNOWDOG the TORCH")
     print("well its gone now")
+    print(f"YOU SURVIVE WITH {player_hp} AND {gold} GOLD")
+where2 = input("What now? S/E/W")
+if where2 == "W":
+    print("you wait...")
+    print("AN ICE ELEMENTAL APPEARS!")
+    if rockhatesyou == True:
+        print("IT HITS YOU FOR 20 DAMAGE AND LEAVES FOR SOME REASON")
+        print("i wonder why")
+    else:
+        print("THE ICE ELEMENTAL TAKES THE FIRST TURN AND HITS YOU FOR 2 DAMAGE")
+        player_hp -= 2
+        print("SPARE OR FIGHT?")
+        if input(" ") == "S":
+            print("YOU SPARE THE ICE ELEMENTAL, IT APPRECIATES YOUR KINDNESS AND IS TELLING ITS FRIENDS ABOUT YOU")
+        else:
+            print("YOU HIT THE ICE ELEMENTAL FOR 4 DAMAGE")
+            print("THE ICE ELEMENTAL HAS 16 HP LEFT!")
+            print("wait it doesnt feel like fighting. WHAT A PARTY POOPER!")
 print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
 input("")
