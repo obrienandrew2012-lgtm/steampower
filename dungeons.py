@@ -225,6 +225,8 @@ if where2 == "W":
         else:
             print("YOU HIT THE ICE ELEMENTAL FOR 4 DAMAGE")
             print("THE ICE ELEMENTAL HAS 16 HP LEFT!")
-            print("wait it doesnt feel like fighting. WHAT A PARTY POOPER!")
+            print("THE ICE ELEMENTAL MAKES AND ICE WALL!")
+            print("IT SHOOTS ICE ABOVE THE WALL!")
+            print("YOU ARE HIT FOR 5 DAMAGE")
 print(f"\nYou survive with {player_hp} HP and {gold} GOLD!")
 input("")
