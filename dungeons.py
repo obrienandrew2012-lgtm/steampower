@@ -11,7 +11,7 @@ print("You've heard rumors about this DUNGEON...")
 print("You've heard about a great reward...")
 print("It's now or never...")
 answer = input("Are you ready  to go into the dungeon?? Y/N ").upper()
-
+creature2 = random.randint(15, 25)
 if answer == "QSG22":
     print("ADMIN CONTROLS ACTIVATED")
     player_hp += 9999
@@ -192,18 +192,20 @@ elif answer == "Y":
 
         else:
             print("Invalid choice.")
-
+playertook = random.randint(5, 10)
+playerhit = random.randint(10, 19)
 print("YOU MADE IT TO THE ICE CAVE ZONE THING")
 print("A creature appears!")
 if input("F/R/T") == "F":
     print("You hit the SNOWDOG for 6 health")
-    creature_hp -= 6
+    creature2 -= 6
     print(creature_hp)
-    print("THE SNOWDOG HITS YOU FOR 9 HEALTH")
-    player_hp -= 9
-    print("YOU HIT THE SNOWDOG FOR 5 HEALTH")
-    creature_hp -= 9
-    print("the SNOWDOG quit fighting for some reason")
+    print("THE SNOWDOG HITS YOU FOR {playertook} HEALTH")
+    player_hp -= playertook
+    print("YOU HIT THE SNOWDOG FOR {playerhit} HEALTH")
+    creature_hp -= {playerhit}
+    if creature2 == 0:
+        print("YOU WIN")
     break
 elif input("F/R/T") == "T":
     print("you showed the SNOWDOG the TORCH")
