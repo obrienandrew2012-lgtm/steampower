@@ -206,7 +206,7 @@ if input("F/R/T") == "F":
     creature_hp -= {playerhit}
     if creature2 == 0:
         print("YOU WIN")
-    break
+        break
 elif input("F/R/T") == "T":
     print("you showed the SNOWDOG the TORCH")
     print("well its gone now")
